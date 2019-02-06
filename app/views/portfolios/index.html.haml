@@ -1,0 +1,10 @@
+%h2 Portfolio Items
+- @portfolio_items.each do |item|
+  %p
+    = item.title
+  %p
+    = item.subtitle
+  %p
+    = item.body
+  = image_tag item.thumb_image
+  %hr
