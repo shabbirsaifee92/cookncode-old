@@ -6,5 +6,5 @@
     = item.subtitle
   %p
     = item.body
-  = image_tag item.thumb_image
+  = image_tag item.thumb_image unless item.thumb_image.nil?
   %hr
