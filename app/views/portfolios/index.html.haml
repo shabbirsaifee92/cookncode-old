@@ -3,11 +3,12 @@
 
 - @portfolio_items.each do |item|
   %p
-    = item.title
+    = link_to item.title, portfolio_path(item)
   %p
     = item.subtitle
   %p
     = item.body
   = image_tag item.thumb_image unless item.thumb_image.nil?
-  = link_to "Edit", edit_portfolio_path(item)
+  %p
+    = link_to "Edit", edit_portfolio_path(item)
   %hr
