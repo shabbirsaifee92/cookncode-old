@@ -1,15 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-#
+3.times do |topic|
+  Topic.create!(title: "Topic #{topic}")
+end
+
+puts '3 topics created'
+
 10.times do |blog|
   Blog.create!(
-      title: "My blog post #{blog}",
-      body: 'blog body'
+    title: "My blog post #{blog}",
+    body: 'blog body',
+    topic_id: Topic.last.id
   )
 end
 
@@ -17,8 +16,8 @@ puts '10 blogs created'
 
 5.times do |skill|
   Skill.create!(
-      title: "skill #{skill}",
-      percent_utilized: skill
+    title: "skill #{skill}",
+    percent_utilized: (skill + 1) * 10
   )
 end
 
@@ -26,8 +25,18 @@ puts '5 skills created'
 
 9.times do |portfolio|
   Portfolio.create!(
+    title: "Portfolio title: #{portfolio}",
+    subtitle: 'Ruby on Rails',
+    body: 'Portfolio body',
+    main_image: 'https://via.placeholder.com/600x400',
+    thumb_image: 'https://via.placeholder.com/350x200'
+  )
+end
+
+1.times do |portfolio|
+  Portfolio.create!(
       title: "Portfolio title: #{portfolio}",
-      subtitle: 'Portfolio subtitle',
+      subtitle: 'Angular',
       body: 'Portfolio body',
       main_image: 'https://via.placeholder.com/600x400',
       thumb_image: 'https://via.placeholder.com/350x200'
@@ -35,3 +44,11 @@ puts '5 skills created'
 end
 
 puts '9 portfolio created'
+
+3.times do |tech|
+  Portfolio.last.technologies.create!(
+    name: "Technology-#{tech}"
+  )
+end
+
+puts '3 technologies created'
