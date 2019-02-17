@@ -17,3 +17,7 @@
     %p.alert
       = alert
     = yield
+    - if session[:source].present?
+      %p
+        Thanks for visiting me from
+        = session[:source]
