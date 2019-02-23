@@ -2,11 +2,20 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Porfolio
+    %title
+      = @page_title
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
+    %div
+      %div
+        = link_to "Home", root_path
+        = link_to "About", about_me_path
+        = link_to "Contact", contact_path
+        = link_to "Blog", blogs_path
+        = link_to "Portfolio", portfolios_path
     - if current_user.is_a?(User)
       = link_to 'Logout', destroy_user_session_path, method: :delete
     - else
@@ -17,6 +26,7 @@
     %p.alert
       = alert
     = yield
+
     - if session[:source].present?
       %p
         Thanks for visiting me from
