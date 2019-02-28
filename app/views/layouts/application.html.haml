@@ -14,7 +14,9 @@
     - else
       = link_to 'Register', new_user_registration_path
       = link_to 'Login', new_user_session_path
-    = render 'shared/nav'
+
+    = render 'shared/nav', location: 'top'
+
     %p.notice
       = notice
     %p.alert
