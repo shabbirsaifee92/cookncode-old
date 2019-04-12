@@ -13,4 +13,8 @@ module ApplicationHelper
       content_tag :p, "Thank for visiting me from #{session[:source]}", class: "#{layout}-source-greeting"
     end
   end
+
+  def set_copyright
+    "&copy; #{Time.now.year} | <b>Shabbir Saifee</b> All right reserved".html_safe
+  end
 end
