@@ -11,14 +11,11 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = login_helper
+    .cover-container.d-flex.h-100.p-3.mx-auto.flex-column
+      = login_helper
 
-    = render 'shared/nav', location: 'top'
+      = render 'shared/application_nav'
 
-    %p.notice
-      = notice
-    %p.alert
-      = alert
-    = yield
-    = set_copyright
-    = source_helper("application")
+      = yield
+      = set_copyright
+      = source_helper("application")
