@@ -13,4 +13,4 @@
   %p= t.name
 
 %p
-  = link_to "Edit", edit_portfolio_path(@portfolio_item)
+  = link_to "Edit", edit_portfolio_path(@portfolio_item) if logged_in? :site_admin
