@@ -11,11 +11,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    .cover-container.d-flex.h-100.p-3.mx-auto.flex-column
-      = login_helper
-
-      = render 'shared/application_nav'
-
-      = yield
-      = set_copyright
-      = source_helper("application")
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          = render 'shared/application_nav'
+          = yield
+          = render 'shared/application_footer'
+          = source_helper("application")
