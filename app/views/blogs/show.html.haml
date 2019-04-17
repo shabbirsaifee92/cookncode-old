@@ -1,10 +1,12 @@
-%p#notice= notice
-%p
-  %strong Title:
-  = @blog.title
-%p
-  %strong Body:
-  = @blog.body
-= link_to 'Edit', edit_blog_path(@blog)
-|
-= link_to 'Back', blogs_path
+.col-sm-8.blog-main
+  = render @blog
+-# %p#notice= notice
+-# %p
+-#   %strong Title:
+-#   = @blog.title
+-# %p
+-#   %strong Body:
+-#   = @blog.body
+-# = link_to 'Edit', edit_blog_path(@blog)
+-# |
+-# = link_to 'Back', blogs_path
