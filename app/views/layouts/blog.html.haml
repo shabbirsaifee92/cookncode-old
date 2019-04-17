@@ -11,16 +11,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    -#  start of nav
-    .blog-masthead
-      .container
-        %nav.nav.blog-nav
-          %a.nav-link.active{:href => "#"} Home
-          %a.nav-link{:href => "#"} New features
-          %a.nav-link{:href => "#"} Press
-          %a.nav-link{:href => "#"} New hires
-          %a.nav-link{:href => "#"} About
-    -# end
+    = render 'shared/blog_nav'
     
     -# start of blog header
     .blog-header
@@ -92,7 +83,7 @@
           %p
             %a{:href => "#"} Back to top
         -# end
-        
+
         =render 'shared/nav', location: 'bottom'
         = source_helper('blog')
     -# end
