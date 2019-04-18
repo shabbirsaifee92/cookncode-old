@@ -36,6 +36,8 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'devise'
 gem 'bootstrap'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
