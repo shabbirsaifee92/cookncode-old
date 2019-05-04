@@ -18,4 +18,15 @@ module ApplicationHelper
   def set_copyright
     "&copy; #{Time.now.year} | <b>Shabbir Saifee</b> All right reserved".html_safe
   end
+
+  def nav_helper(style: nil, tag_type: 'span')
+nav_links = <<NAV
+<#{tag_type}><a href="#{root_path}" class="#{style}">Home</a></#{tag_type}>
+<#{tag_type}><a href="#{about_me_path}" class="#{style}">About</a></#{tag_type}>
+<#{tag_type}><a href="#{contact_path}" class="#{style}">Contact</a></#{tag_type}>
+<#{tag_type}><a href="#{blogs_path}" class="#{style}">Blog</a></#{tag_type}>
+<#{tag_type}><a href="#{portfolios_path}" class="#{style}">Portfolios</a></#{tag_type}>
+NAV
+    nav_links.html_safe
+  end
 end

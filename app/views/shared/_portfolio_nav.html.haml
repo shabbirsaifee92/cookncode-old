@@ -19,10 +19,5 @@
     %a.navbar-brand{:href => "#"} Album
     %button.navbar-toggler{"aria-controls" => "navbarHeader", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarHeader", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
-
-    = link_to "Home", root_path
-    = link_to "About", about_me_path
-    = link_to "Contact", contact_path
-    = link_to "Blog", blogs_path
-    = link_to "Portfolio", portfolios_path
+    = nav_helper
     = login_helper
