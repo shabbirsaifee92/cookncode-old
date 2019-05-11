@@ -19,4 +19,11 @@ class Portfolio < ApplicationRecord
     self.main_image ||= image_generator(width: 600, height: 400)
     self.thumb_image ||= image_generator(width: 350, height: 200)
   end
+
+  def self.update_positions(position_hash)
+    position_hash.each do |_key, value|
+      find(value[:id]).update(position: value[:position])
+    end
+
+  end
 end
