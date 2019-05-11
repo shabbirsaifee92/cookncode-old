@@ -1,18 +1,23 @@
 = form_for(portfolio_item) do |form|
-  .field
-    = form.label :title
-    = form.text_field :title, id: :portfolio_title
-  .field
-    = form.label :subtitle
-    = form.text_field :subtitle, id: :portfolio_subtitle
-  .field
-    = form.label :body
-    = form.text_area :body, id: :portfolio_body
-  %ul
-    = form.fields_for :technologies do |technology_form|
-      %li
-        = technology_form.label :name
-        = technology_form.text_field :name
+  .row
+    .col-md-6
+      .form-group
+        = form.label :title
+        = form.text_field :title, id: :portfolio_title, class: 'form-control'
+      .form-group
+        = form.label :subtitle
+        = form.text_field :subtitle, id: :portfolio_subtitle, class: 'form-control'
+    .col-md-6
+      .form-group
+        = form.label :body
+        = form.text_area :body, id: :portfolio_body, class: 'form-control', rows: 13
 
-  .actions
-    = form.submit
+    .col-md-12
+      %h2 Technologies used
+      .form-group
+        = form.fields_for :technologies do |technology_form|
+          = technology_form.label :name
+          = technology_form.text_field :name, class: 'form-control'
+
+      .form-group
+        = form.submit 'Save Portfolio Item', class: 'btn btn-primary btn-block'

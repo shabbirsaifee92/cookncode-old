@@ -1,28 +1,21 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title
-      = @page_title
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+
     = csrf_meta_tags
     = stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
+    %title
+      = @page_title
+
   %body
-    %div
-      %div
-        = link_to "Home", root_path
-        = link_to "About", about_me_path
-        = link_to "Contact", contact_path
-        = link_to "Blog", blogs_path
-        = link_to "Portfolio", portfolios_path
+    = render 'shared/portfolio_nav'
+    = render 'shared/portfolio_masthead' unless logged_in?(:site_admin)
 
-    = login_helper
-
-    %p.notice
-      = notice
-    %p.alert
-      = alert
     = yield
 
+    = render 'shared/portfolio_footer'
     = source_helper('portfolio')

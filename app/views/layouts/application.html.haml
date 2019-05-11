@@ -2,6 +2,8 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+
     %title
       = @page_title
     = csrf_meta_tags
@@ -9,14 +11,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = login_helper
-
-    = render 'shared/nav', location: 'top'
-
-    %p.notice
-      = notice
-    %p.alert
-      = alert
-    = yield
-    = set_copyright
-    = source_helper("application")
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          = render 'shared/application_nav'
+          = yield
+          = render 'shared/application_footer'
+          = source_helper("application")

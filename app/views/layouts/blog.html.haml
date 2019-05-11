@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    
     %title
       = @page_title
     = csrf_meta_tags
@@ -9,19 +11,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    .notice
-      = notice
-    .alert
-      = alert
+    = render 'shared/blog_nav'
+    = render 'shared/blog_masthead'
 
-    = login_helper
+    .container
+      .row
+        = yield
+        = render 'shared/blog_sidebar'
 
-    %p.notice
-      = notice
-    %p.alert
-      = alert
-    = yield
-
-    =render 'shared/nav', location: 'bottom'
-
+    = render 'shared/blog_footer'
     = source_helper('blog')
+

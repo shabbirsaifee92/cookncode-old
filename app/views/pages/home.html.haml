@@ -1,7 +1,5 @@
-%h1
-  = 'Hi ' +  current_user.first_name
-%p Find me in app/views/pages/home.html.haml
-
-= @blogs.inspect
-= @skills.inspect
-%hr
+.inner.cover
+  %h1.cover-heading Welcome.
+  %p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+  %p.lead
+    = link_to 'About Me', about_me_path, class: 'btn btn-lg btn-secondary'

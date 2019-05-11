@@ -1,4 +1,5 @@
 %h2 Portfolio Items
-= link_to "Create New item", new_portfolio_path if logged_in? :site_admin
-
-= render partial: 'portfolio_item', collection: @portfolio_items
+.album.text-muted
+  .container
+    .row
+      = render partial: 'portfolio_item', collection: @portfolio_items
