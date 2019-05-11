@@ -1,5 +1,5 @@
 %h2 Portfolio Items
 .album.text-muted
   .container
-    .row.sortable
+    %div{class: "row #{"sortable" if logged_in?(:site_admin)}"}
       = render partial: 'portfolio_item', collection: @portfolio_items
