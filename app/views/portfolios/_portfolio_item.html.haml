@@ -1,6 +1,6 @@
-.card{"data-id" => "#{portfolio_item.id}"}
+.card{"data-id" => "#{portfolio_item.id}", class: 'portfolio-item'}
   = link_to portfolio_item.title, portfolio_show_path(portfolio_item)
-  = image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?
+  = image_generator image: portfolio_item.thumb_image, placeholder: 'thumb_placeholder.jpg'
   %p.card-text
     %span
       = link_to portfolio_item.title, portfolio_show_path(portfolio_item)

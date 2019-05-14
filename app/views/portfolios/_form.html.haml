@@ -7,6 +7,14 @@
       .form-group
         = form.label :subtitle
         = form.text_field :subtitle, id: :portfolio_subtitle, class: 'form-control'
+      .form-group
+        %label{class: 'btn btn-primary btn-block'}
+          Upload main image
+          = form.file_field :main_image, id: :portfolio_main_image, accept: 'image/png,image/gif,image/jpeg, image/gif', style: 'display:none;'
+      .form-group
+        %label{class: 'btn btn-secondary btn-block'}
+          Upload thumbnail image
+          = form.file_field :thumb_image, id: :portfolio_thumb_image, accept: 'image/png,image/gif,image/jpeg, image/gif', style: 'display:none;'
     .col-md-6
       .form-group
         = form.label :body

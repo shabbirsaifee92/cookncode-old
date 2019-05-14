@@ -20,6 +20,7 @@ class PortfoliosController < ApplicationController
 
   def create
     @portfolio_item = Portfolio.new portfolio_params
+
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Your Portfolio item is now live.' }
@@ -58,6 +59,8 @@ class PortfoliosController < ApplicationController
                                       :title,
                                       :subtitle,
                                       :body,
+                                      :main_image,
+                                      :thumb_image,
                                       technologies_attributes: [:name]
                                      )
   end

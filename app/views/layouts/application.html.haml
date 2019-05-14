@@ -14,6 +14,7 @@
     .site-wrapper
       .site-wrapper-inner
         .cover-container
+          = video_tag 'Spacious.mp4', id: 'background', autoplay: true, muted: true, loop: true, poster: 'home_bg.png'
           = render 'shared/application_nav'
           = yield
           = render 'shared/application_footer'

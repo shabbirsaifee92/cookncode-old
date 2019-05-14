@@ -4,21 +4,15 @@ class Portfolio < ApplicationRecord
   accepts_nested_attributes_for :technologies,
                                             reject_if: lambda { |attrs| attrs['name'].blank? }
 
-  include Placeholder
+  validates :title, :subtitle, :body, presence: true
 
-  validates :title, :subtitle, :body, :main_image, :thumb_image, presence: true
+  has_one_attached :thumb_image
+  has_one_attached :main_image
 
   scope :angular, -> { where(subtitle: 'Angular') }
   scope :by_position, -> { order('position') }
 
-  after_initialize :set_defaults
-
   private
-
-  def set_defaults
-    self.main_image ||= image_generator(width: 600, height: 400)
-    self.thumb_image ||= image_generator(width: 350, height: 200)
-  end
 
   def self.update_positions(position_hash)
     position_hash.each do |_key, value|
