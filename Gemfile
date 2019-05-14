@@ -41,6 +41,7 @@ gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'mini_racer'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+gem "aws-sdk-s3", require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'haml-rails'
