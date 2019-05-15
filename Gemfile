@@ -32,6 +32,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem "aws-sdk-s3", require: false
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
+gem 'gritter', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
