@@ -9,12 +9,12 @@
         = @portfolio_item.subtitle
       %p
         = @portfolio_item.body
-      %h2 Technologies Used
 
+      %h2 Technologies Used
       - @portfolio_item.technologies.each do |t|
         %p= t.name
 
       %p
-        = link_to "Edit", edit_portfolio_path(@portfolio_item) if logged_in? :site_admin
+        = link_to "Edit", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' if logged_in? :site_admin
 
 
