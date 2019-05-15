@@ -1,7 +1,7 @@
 = form_for(portfolio_item) do |form|
   - if portfolio_item.errors.any?
     - portfolio_item.errors.full_messages.each do |error|
-      = js add_gritter(error, title: 'Error', image: :error, sticky: false)
+      = alert error, :error, 'Error'
   .row
     .col-md-6
       .form-group
