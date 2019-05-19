@@ -8,7 +8,7 @@ jQuery(document).on 'turbolinks:load', ->
     connected: ->
     disconnected: ->
     received: (data) ->
-      comments.unshift data['comment']
+      comments.append data['comment']
     send_comment: (blog_id, comment) ->
       @perform 'send_comment', comment: comment, blog_id: blog_id
   $('#new_comment').submit (e) ->
