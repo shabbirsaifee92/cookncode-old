@@ -15,8 +15,12 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @page_title = @blog.title
-    @comment = Comment.new
+    if logged_in? :site_admin || @blog.published?
+      @page_title = @blog.title
+      @comment = Comment.new
+    else
+      render plain: 'The page you are looking for does not exist'
+    end
   end
 
   def new
