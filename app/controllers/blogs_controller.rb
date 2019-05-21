@@ -4,8 +4,13 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, site_admin: :all
 
   def index
+    if logged_in? :site_admin
+      @blogs = Blog.page(params[:page]).per 5
+    else
+      @blogs = Blog.published.page(params[:page]).per 5
+    end
     @page_title = 'My portfolio blog'
-    @blogs = Blog.page(params[:page]).per 5
+
   end
 
   def show
