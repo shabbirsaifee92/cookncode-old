@@ -4,7 +4,7 @@
     = @blog.topic.title
   = link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin)
   %p
-    = @blog.body
+    = markdown @blog.body
   = render 'comments/form'
   #comments{ 'data-blog-id': "#{@blog.id}" }
     = render @blog.comments
