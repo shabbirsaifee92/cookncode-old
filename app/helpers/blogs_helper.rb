@@ -20,4 +20,8 @@ module BlogsHelper
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
   end
+
+  def metadata(blog)
+    "Published #{distance_of_time_in_words(blog.created_at, Time.zone.now)} ago"
+  end 
 end

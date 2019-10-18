@@ -2,7 +2,7 @@
   %h2.blog-post-title
     = link_to blog.title.capitalize, blog_path(blog)
   %p.blog-post-meta
-    = "Published #{distance_of_time_in_words(blog.created_at, Time.zone.now)} ago"
+    = metadata(blog)
   - if logged_in? :site_admin
     %p.blog-post-meta
       - if blog.published?
