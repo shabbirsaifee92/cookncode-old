@@ -1,17 +1,27 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :destroy, :toggle_status]
+  before_action :set_sidebar_topics, except: [:create, :destroy, :update, :toggle_status]
   layout "blog"
   access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, site_admin: :all
 
   def index
+    if logged_in? :site_admin
+      @blogs = Blog.page(params[:page]).per 5
+    else
+      @blogs = Blog.published.page(params[:page]).per 5
+    end
     @page_title = 'My portfolio blog'
-    @blogs = Blog.page(params[:page]).per 5
+
   end
 
   def show
     @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @page_title = @blog.title
-    @comment = Comment.new
+    if logged_in? :site_admin || @blog.published?
+      @page_title = @blog.title
+      @comment = Comment.new
+    else
+      render plain: 'The page you are looking for does not exist'
+    end
   end
 
   def new
@@ -79,6 +89,10 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id, :status)
+    end
+
+    def set_sidebar_topics
+      @sidebar_topics = Topic.with_blogs
     end
 end

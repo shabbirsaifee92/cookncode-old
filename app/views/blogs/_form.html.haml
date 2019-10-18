@@ -6,6 +6,20 @@
     = form.label :title
     = form.text_field :title, id: :blog_title, class: 'form-control'
   .form-group
+    = form.label :topic_id
+    - if blog.topic
+      = form.collection_select(:topic_id, Topic.all, :id, :title,               |
+        { selected: blog.topic.id, include_blank: true }, class: 'form-control') |
+    - else
+      = form.collection_select(:topic_id, Topic.all, :id, :title,   |
+        { selected: '', include_blank: true }, class: 'form-control') |
+  .form-group
+    = form.radio_button :status, 'draft'
+    = form.label :status, 'Draft'
+
+    = form.radio_button :status, 'published'
+    = form.label :status, 'Published'
+  .form-group
     = form.label :body
     = form.text_area :body, id: :blog_body, class: 'form-control', rows: 15
   .form-group
