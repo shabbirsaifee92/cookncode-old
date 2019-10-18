@@ -23,5 +23,6 @@ module Porfolio
     config.generators.system_tests = nil
 
     config.paths.add 'lib', eager_load: true
+    config.secret_key_base=ENV["SECRET_KEY_BASE"]
   end
 end
