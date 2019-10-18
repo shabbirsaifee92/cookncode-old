@@ -10,6 +10,11 @@
     = metadata(@blog)
   %p
     = markdown @blog.body
-  = render 'comments/form'
-  #comments{ 'data-blog-id': "#{@blog.id}" }
+  
+  %hr
+  - if(@blog.comments.present?)
+    %h5
+      %i Comments
+    #comments{ 'data-blog-id': "#{@blog.id}" }
     = render @blog.comments
+  = render 'comments/form'  
