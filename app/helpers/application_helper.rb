@@ -41,10 +41,10 @@ module ApplicationHelper
         title: 'Blog'
       },
 
-      {
-        url: portfolios_path,
-        title: 'Portfolio'
-      },
+      # {
+      #   url: portfolios_path,
+      #   title: 'Portfolio'
+      # },
 
       {
         url: tech_news_path,
