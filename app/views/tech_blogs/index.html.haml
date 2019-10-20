@@ -1,0 +1,7 @@
+.col-sm-8.blog-main
+  = paginate @blogs
+  -# - binding.pry
+  - @blogs.each do |tech_blog|
+    = render partial: 'blog', locals: {blog: tech_blog}
+  = paginate @blogs
+

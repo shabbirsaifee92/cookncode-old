@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get 'about-me', to: 'pages#about'
   get 'tech-news', to: 'pages#tech_news'
-  resources :blogs do
+  resources :tech_blogs, path: 'tech-blogs' do
     member do
       post :toggle_status
     end
