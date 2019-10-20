@@ -15,6 +15,7 @@
   - if(@blog.comments.present?)
     %h5
       %i Comments
-    #comments{ 'data-blog-id': "#{@blog.id}" }
-    = render @blog.comments
-  = render 'comments/form'  
+    #comments
+      = render @blog.comments
+  #comment_form{ 'data-blog-id': "#{@blog.id}" }
+    = render 'comments/form'  
