@@ -7,18 +7,18 @@
     %title
       = @page_title
     = csrf_meta_tags
-    = stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'tech_blogs', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = render 'shared/blog_nav'
-    = render 'shared/blog_masthead'
+    = render 'shared/tech_blog_nav'
+    = render 'shared/tech_blog_masthead'
 
     .container
       .row
         = yield
-        = render 'shared/blog_sidebar'
+        = render 'shared/tech_blog_sidebar'
 
-    = render 'shared/blog_footer'
+    = render 'shared/tech_blog_footer'
     = source_helper('blog')
 

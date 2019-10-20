@@ -37,8 +37,8 @@ module ApplicationHelper
       },
 
       {
-        url: blogs_path,
-        title: 'Blog'
+        url: tech_blogs_path,
+        title: 'Tech-Blog'
       },
 
       # {
