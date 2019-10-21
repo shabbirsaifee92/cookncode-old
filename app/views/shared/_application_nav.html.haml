@@ -1,6 +1,8 @@
-.masthead.clearfix
-  .inner
-    %h3.masthead-brand C00KNC0DE
-    %nav.nav.nav-masthead.app-nav
-      = nav_helper style: 'nav-link', tag_type: 'span'
-      = login_helper style: 'nav-link'
+.nav-area
+  .logo
+    = link_to root_path, class: 'navbar-brand' do
+      = image_tag("CookNCode-logo-02-small.jpg", :alt => "CookNCode", style: "width: 200px;")
+  .menu-area
+    %ul
+      = nav_helper tag_type: 'li'
+      = login_helper tag_type: 'li'

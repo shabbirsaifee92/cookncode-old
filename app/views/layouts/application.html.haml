@@ -12,12 +12,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    .site-wrapper
-      .site-wrapper-inner
-        .cover-container
-          = video_tag 'Spacious.mp4', id: 'background', autoplay: true, muted: true, loop: true
-          = render 'shared/application_nav'
-          = yield
-          = render 'shared/application_footer'
-          = set_alerts
-          = source_helper("application")
+    -# = video_tag 'Spacious.mp4', id: 'background', autoplay: true, muted: true, loop: true
+    -# = render 'shared/application_nav'
+    -# = yield
+    -# = render 'shared/application_footer'
+    -# = set_alerts
+    -# = source_helper("application")
+  %header{class: 'fix'}
+    = video_tag 'Spacious.mp4', id: 'background', autoplay: true, muted: true, loop: true, class: 'vid-bg'
+    = render 'shared/application_nav'
+    = yield
+    = render 'shared/application_footer'
+    -# = set_alerts
+    -# = source_helper("application")

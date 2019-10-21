@@ -1,27 +1,27 @@
 .delicious-main-menu
   .classy-nav-container.breakpoint-off
-    .container
+    -# .container
+    -#   / Menu
+    %nav#deliciousNav.classy-navbar.justify-content-between
+      = link_to root_path, class: 'navbar-brand' do
+        = image_tag("CookNCode-logo-02-small.jpg", :alt => "CookNCode", class: 'website-logo d-inline-block align-middle mr-2 pull-left')
+
+      / Navbar Toggler
+      .classy-navbar-toggler
+        %span.navbarToggler
+          %span
+          %span
+          %span
       / Menu
-      %nav#deliciousNav.classy-navbar.justify-content-between
-        / Logo
-        %a.nav-brand{:href => root_path}
-          CookNCode
-        / Navbar Toggler
-        .classy-navbar-toggler
-          %span.navbarToggler
-            %span
-            %span
-            %span
-        / Menu
-        .classy-menu
-          / close btn
-          .classycloseIcon
-            .cross-wrap
-              %span.top
-              %span.bottom
-          / Nav Start
-          .classynav
-            %ul
-              = nav_helper tag_type: 'li'
-              = login_helper tag_type: 'li'
-          / Nav End
+      .classy-menu
+        / close btn
+        .classycloseIcon
+          .cross-wrap
+            %span.top
+            %span.bottom
+        / Nav Start
+        .classynav
+          %ul
+            = nav_helper tag_type: 'li'
+            = login_helper tag_type: 'li'
+        / Nav End
