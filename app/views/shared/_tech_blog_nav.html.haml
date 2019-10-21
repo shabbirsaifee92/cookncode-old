@@ -1,7 +1,7 @@
 .blog-masthead
   .container
     %nav.nav.blog-nav
-      %a.nav-brand{:href => root_path, class: 'nav-link'}
-        CookNCode
+      = link_to root_path, class: 'navbar-brand' do
+        = image_tag("CookNCode-logo-02-small.jpg", :alt => "CookNCode", class: 'website-logo d-inline-block align-middle mr-2 pull-left')
       = nav_helper style: 'nav-link'
       = login_helper style: 'nav-link'

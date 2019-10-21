@@ -6,6 +6,6 @@ module DefaultPageContent
   end
 
   def set_page_defaults
-    @page_title = "Portfolio | Shabbir Saifee"
+    @page_title = "CookNCode"
   end
 end

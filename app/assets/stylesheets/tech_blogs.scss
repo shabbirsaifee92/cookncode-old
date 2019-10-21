@@ -35,6 +35,8 @@ h6, .h6 {
 
 .container {
   max-width: 60rem;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 
@@ -44,7 +46,7 @@ h6, .h6 {
 
 .blog-masthead {
   margin-bottom: 3rem;
-  background-color: #428bca;
+  background-color:#fff;
   -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
           box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
 }
@@ -54,17 +56,19 @@ h6, .h6 {
   position: relative;
   padding: 1rem;
   font-weight: 500;
-  color: #cdddeb;
+  color: #0d1146;
+  padding-top: 25px;
+  font-size: 1rem;
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: #fff;
-  background-color: transparent;
+  color: #0d1146;
+  font-weight: bold;
 }
 
 /* Active state gets a caret at the bottom */
 .nav-link.active {
-  color: #fff;
+  color: #0d1146;
 }
 .nav-link.active:after {
   position: absolute;
@@ -79,7 +83,6 @@ h6, .h6 {
   border-bottom: .3rem solid;
   border-left: .3rem solid transparent;
 }
-
 
 /*
  * Blog name and description
@@ -188,4 +191,12 @@ h6, .h6 {
 
 .comment-name {
   font-weight: 700;
+}
+
+.website-logo {
+  width: 200px;
+}
+
+span a {
+  padding-top: 25px;
 }
