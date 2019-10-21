@@ -1,9 +1,12 @@
 module ApplicationHelper
-  def login_helper(css_class=nil)
+  def login_helper(style: nil, tag_type: 'span')
+    login_links = [ {url: new_user_registration_path, title: 'Signup' }, { url: new_user_session_path, title: 'Login' }]
     if current_user.is_a?(GuestUser)
-      (link_to 'Sign Up', new_user_registration_path, class: "#{css_class} #{active new_user_registration_path}") +
-      ' '.html_safe +
-      (link_to 'Login', new_user_session_path, class: "#{css_class} #{active new_user_session_path}")
+      nav_links = ''
+      login_links.each do |item|
+        nav_links += "<#{tag_type}><a href=#{item[:url]} class= '#{style} #{active(item[:url])}'>#{item[:title]}</a></#{tag_type}>"
+      end
+      nav_links.html_safe
     else
       link_to 'Logout', destroy_user_session_path, method: :delete, class: css_class
     end
