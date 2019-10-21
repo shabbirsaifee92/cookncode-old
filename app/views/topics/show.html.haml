@@ -1,7 +1,8 @@
 .col-sm-8.blog-main
   %h1= @topic.title
   = paginate @blogs
-  = render @blogs
+  - @blogs.each do |tech_blog|
+    = render partial: 'tech_blogs/blog', locals: {blog: tech_blog}
   = paginate @blogs
 
 

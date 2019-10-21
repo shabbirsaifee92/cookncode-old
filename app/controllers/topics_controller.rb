@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  layout 'blog'
+  layout 'tech_blog'
 
   before_action :set_sidebar_topics
   def index
