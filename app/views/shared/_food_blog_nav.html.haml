@@ -1,0 +1,28 @@
+.delicious-main-menu
+  .classy-nav-container.breakpoint-off
+    .container
+      / Menu
+      %nav#deliciousNav.classy-navbar.justify-content-between
+        / Logo
+        %a.nav-brand{:href => root_path}
+          CookNCode
+        / Navbar Toggler
+        .classy-navbar-toggler
+          %span.navbarToggler
+            %span
+            %span
+            %span
+        / Menu
+        .classy-menu
+          / close btn
+          .classycloseIcon
+            .cross-wrap
+              %span.top
+              %span.bottom
+          / Nav Start
+          .classynav
+            %ul
+              = nav_helper tag_type: 'li'
+              %li
+                = login_helper
+          / Nav End

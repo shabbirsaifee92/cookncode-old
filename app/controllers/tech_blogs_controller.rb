@@ -10,7 +10,7 @@ class TechBlogsController < ApplicationController
     else
       @blogs = Blog.published.page(params[:page]).per 5
     end
-    @page_title = 'My portfolio blog'
+    @page_title = 'CookNCode Tech blog'
 
   end
 

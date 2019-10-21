@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :food_blogs, path: 'food-blogs', only: [:index] do
+  end
+  
   mount ActionCable.server => '/cable'
   root to: 'pages#home'
 end
