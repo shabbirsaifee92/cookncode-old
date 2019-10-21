@@ -38,7 +38,12 @@ module ApplicationHelper
 
       {
         url: tech_blogs_path,
-        title: 'Tech-Blog'
+        title: 'Tech Blog'
+      },
+      
+      {
+        url: food_blogs_path,
+        title: 'Food Blog'  
       },
 
       # {

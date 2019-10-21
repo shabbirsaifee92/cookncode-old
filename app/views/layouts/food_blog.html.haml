@@ -1,0 +1,41 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    / The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags
+    / Title
+    %title
+      = @page_title
+    = csrf_meta_tags
+    = stylesheet_link_tag 'food_blogs', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    / Favicon
+    %link{:href => "img/core-img/favicon.ico", :rel => "icon"}/
+  %body
+    / ##### Header Area Start #####
+    %header.header-area
+      / Navbar Area
+      = render partial: 'shared/food_blog_nav'
+    
+    / ##### Hero Area Start #####
+    %section.hero-area
+      .hero-slides.owl-carousel
+        / Single Hero Slide
+        .single-hero-slide.bg-img
+          .container.h-100
+            .row.h-100.align-items-center
+              .col-12.col-md-9.col-lg-7.col-xl-6
+                .hero-slides-content{"data-animation" => "fadeInUp", "data-delay" => "100ms"}
+                  %h2{"data-animation" => "fadeInUp", "data-delay" => "300ms"} Coming Soon!
+                  %p{"data-animation" => "fadeInUp", "data-delay" => "700ms"} Our food blog is currently under construction.
+    / ##### Hero Area End #####
+
+    / ##### All Javascript Files #####
+    = javascript_include_tag "food_blogs/popper.min.js"
+    = javascript_include_tag "food_blogs/plugins.js"
+    = javascript_include_tag "food_blogs/active.js"

@@ -1,5 +1,7 @@
 .blog-masthead
   .container
     %nav.nav.blog-nav
+      %a.nav-brand{:href => root_path, class: 'nav-link'}
+        CookNCode
       = nav_helper style: 'nav-link'
       = login_helper 'nav-link'
