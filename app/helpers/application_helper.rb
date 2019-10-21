@@ -8,7 +8,7 @@ module ApplicationHelper
       end
       nav_links.html_safe
     else
-      link_to 'Logout', destroy_user_session_path, method: :delete, class: css_class
+      "<#{tag_type}> #{link_to 'Logout', destroy_user_session_path, method: :delete, class: style}".html_safe
     end
   end
 

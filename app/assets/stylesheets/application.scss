@@ -363,3 +363,27 @@ h6, .h6 {
   left: 16%;
   right: 16%;
 }
+
+
+.card {
+  position: absolute;
+  top: 35%;
+  text-align: left;
+  left: 16%;
+  right: 16%;
+}
+
+.login > .card {
+  width: 40%;
+  margin: 0 auto;
+  float: none;
+}
+
+form .form-group {
+  margin-left: 10px !important;
+  margin-right: 10px;
+}
+
+.auth-links a{
+  margin: 0px 10px 0px 10px;
+}
