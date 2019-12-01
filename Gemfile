@@ -38,6 +38,11 @@ gem 'redis', '~> 4.1', '>= 4.1.1'
 gem 'redcarpet', '~> 3.5'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'haml-rails'
+
+gem 'html-pipeline', '~> 2.12', '>= 2.12.2'
+gem 'github-markdown', '~> 0.6.9'
+gem 'gemoji', '~> 3.0', '>= 3.0.1'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
