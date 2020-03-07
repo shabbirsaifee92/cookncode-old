@@ -92,8 +92,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.web_socket_server_url = "wss://cookncode.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://cookncode.herokuapp.com', 'http://cookncode.herokuapp.com']
+  config.web_socket_server_url = "wss://cookncode.com/cable"
+  config.action_cable.allowed_request_origins = ['https://cookncode.com', 'http://cookncode.com']
 
   config.action_mailer.default_url_options = { :host => "cookncode.com" }
 
