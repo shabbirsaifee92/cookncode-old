@@ -94,4 +94,17 @@ Rails.application.configure do
 
   config.web_socket_server_url = "wss://cookncode.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://cookncode.herokuapp.com', 'http://cookncode.herokuapp.com']
+
+  config.action_mailer.delivery_method = :smtp
+  
+  ActionMailer::Base.smtp_settings = {
+    :user_name => 'apikey',
+    :password => Rails.application.credentials.dig(:sendgrid_api_key),
+    :domain => 'cookncode.com',
+    :address => 'smtp.sendgrid.net',
+    :port => '465',
+    :authentication => :plain,
+    :enable_starttls_auto => true,
+    :tls => true
+  }
 end
