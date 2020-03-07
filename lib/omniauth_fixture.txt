@@ -1,0 +1,31 @@
+{"provider"=>"google_oauth2",
+ "uid"=>"101468260370297010921",
+ "info"=>
+  {"email"=>"shabbirsaifee91@gmail.com",
+   "unverified_email"=>"shabbirsaifee91@gmail.com",
+   "email_verified"=>true,
+   "image"=>"https://lh3.googleusercontent.com/a-/AAuE7mCZYaPWrRGModSBQB9zbgvsbIQDBxX6SoHVpBdOqg"},
+ "credentials"=>
+  {"token"=>"ya29.ImC9B-aYpRcxrvURpxmDAFMTgFUUSSCLpjAG4dPKwkiLLy3KO_ZHVouHs6Vd7CEChrOrSU3gOhA9NUToMLU2QA3tvhXgZCmQ4TJaQlkf_J9s_haN9H9ETCXYggV1jQQYty0",
+   "expires_at"=>1581111001,
+   "expires"=>true},
+ "extra"=>
+  {"id_token"=>
+    "eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4ZWZlYTFmNjZlODdiYjM2YzJlYTA5ZDgzNzMzOGJkZDgxMDM1M2IiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2NTk0MDA2MTk2MzktaHF2cW0zaWRudWVqbjdhNnBua3Ntcmg2NTU2azlpY3UuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2NTk0MDA2MTk2MzktaHF2cW0zaWRudWVqbjdhNnBua3Ntcmg2NTU2azlpY3UuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDE0NjgyNjAzNzAyOTcwMTA5MjEiLCJlbWFpbCI6InNoYWJiaXJzYWlmZWU5MUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlFDSmtMQmxPTHpPZGlvNnBkM2V3RWciLCJpYXQiOjE1ODExMDc0MDIsImV4cCI6MTU4MTExMTAwMn0.Y5ZTVMhue26o_V9S2sYX2o5risRFC4M6mFuL8RP9LvxOwvBk-vL8bsV_ae26W11TEr5-99rvqWWzWZ4ZcBd4g3ivOVjl9Sqv2Rz6alw-r-JjvlvZwRhzDrYvMlyP1WTghQlW5yNNvvTLbFUdxUTEe0TD1z3wLUwA-MsFZmpESayQO_4Ht52Te2nNxt4A7EGua2WiVtWWZW_OZ48jMfzRQ0z9CeF1LUDIiHOEzh_9qnHi6En_2i3LEv-Euu6d7HMM-WKoUetKRiAW5a0n2oSHMenF5drBzi2sMDImej6qq3xrer3Du9liGb7rt-ZKn0SCQowIhjwrgHMLu_RgQTcjJA",
+   "id_info"=>
+    {"iss"=>"https://accounts.google.com",
+     "azp"=>"659400619639-hqvqm3idnuejn7a6pnksmrh6556k9icu.apps.googleusercontent.com",
+     "aud"=>"659400619639-hqvqm3idnuejn7a6pnksmrh6556k9icu.apps.googleusercontent.com",
+     "sub"=>"101468260370297010921",
+     "email"=>"shabbirsaifee91@gmail.com",
+     "email_verified"=>true,
+     "at_hash"=>"QCJkLBlOLzOdio6pd3ewEg",
+     "iat"=>1581107402,
+     "exp"=>1581111002},
+   "raw_info"=>
+    {"sub"=>"101468260370297010921",
+     "picture"=>"https://lh3.googleusercontent.com/a-/AAuE7mCZYaPWrRGModSBQB9zbgvsbIQDBxX6SoHVpBdOqg",
+     "email"=>"shabbirsaifee91@gmail.com",
+     "email_verified"=>true}}}
+
+OmniAuth::AuthHash.new({provider: 'text'})
