@@ -27,7 +27,6 @@ class User < ApplicationRecord
   
   def self.from_omniauth(auth)
     # Either create a User record or update it based on the provider (Google) and the UID
-    # TODO: email verification on signup
     User.where(email: auth.info.email).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token
