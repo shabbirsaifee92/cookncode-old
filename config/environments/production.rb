@@ -95,6 +95,8 @@ Rails.application.configure do
   config.web_socket_server_url = "wss://cookncode.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://cookncode.herokuapp.com', 'http://cookncode.herokuapp.com']
 
+  config.action_mailer.default_url_options = { :host => "cookncode.com" }
+
   config.action_mailer.delivery_method = :smtp
   
   ActionMailer::Base.smtp_settings = {
