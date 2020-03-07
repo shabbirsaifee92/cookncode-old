@@ -11,10 +11,11 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
 
   validates :name, presence: true
-  has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy 
 
   def first_name
     self.name.split.first
@@ -22,5 +23,19 @@ class User < ApplicationRecord
 
   def last_name
     self.name.split.last
+  end
+  
+  def self.from_omniauth(auth)
+    # Either create a User record or update it based on the provider (Google) and the UID
+    # TODO: email verification on signup
+    User.where(email: auth.info.email).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token
+      user.expires_at = auth.expires_at
+      user.token = auth.token
+      user.refresh_token = auth.refresh_token
+      user.provider = auth.provider
+      user.uid = aith.uid
+    end
   end
 end
