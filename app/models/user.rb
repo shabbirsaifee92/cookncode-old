@@ -36,6 +36,7 @@ class User < ApplicationRecord
       user.refresh_token = auth.refresh_token
       user.provider = auth.provider
       user.uid = aith.uid
+      user.skip_confirmation!
     end
   end
 end
