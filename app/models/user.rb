@@ -36,6 +36,7 @@ class User < ApplicationRecord
       user.provider = auth.provider
       user.uid = auth.uid
       user.confirm
+      user.name = auth.info.email.split('@').first
     end
   end
 end
