@@ -1,3 +1,5 @@
+= javascript_include_tag Ckeditor.cdn_url
+
 = form_for(blog, url: url, local: true) do |form|
   - if blog.errors.any?
     - blog.errors.full_messages.each do |error|
@@ -22,5 +24,8 @@
   .form-group
     = form.label :body
     = form.text_area :body, id: :blog_body, class: 'form-control', rows: 15
+    = form.cktext_area :body, value: 'Default value', id: 'sometext'
   .form-group
     = form.submit 'Update', class: 'btn btn-primary'
+
+   

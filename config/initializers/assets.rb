@@ -14,4 +14,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.assets.precompile += %w( tech_blogs.scss portfolios.scss food_blogs.scss food_blog_util.scss )
-Rails.application.config.assets.precompile += %w( food_blogs/* )
+Rails.application.config.assets.precompile += %w( food_blogs/* ckeditor/config.js)
